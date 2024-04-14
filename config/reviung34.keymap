@@ -109,7 +109,7 @@
                 ;
         };
 
-        You: You {
+        muc_you: macro_uc_you {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <0>;
@@ -118,6 +118,78 @@
                 = <&kp LS(Y)>
                 , <&kp O>
                 , <&kp U>
+                ;
+        };
+
+        mlc_you: macro_lc_you {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <5>;
+            bindings
+                = <&kp Y>
+                , <&kp O>
+                , <&kp U>
+                ;
+        };
+
+        muc_the: macro_uc_the {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <5>;
+            bindings
+                = <&kp LS(T)>
+                , <&kp H>
+                , <&kp E>
+                ;
+        };
+
+        mlc_the: macro_lc_the {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <5>;
+            bindings
+                = <&kp T>
+                , <&kp H>
+                , <&kp E>
+                ;
+        };
+
+        mlc_are: macro_lc_are {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <5>;
+            bindings
+                = <&kp A>
+                , <&kp R>
+                , <&kp E>
+                ;
+        };
+
+        mlc_qu: macro_lc_qu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <5>;
+            bindings
+                = <&kp Q>
+                , <&kp U>
+                ;
+        };
+
+        mlc_ould: macro_lc_ould {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <5>;
+            bindings
+                = <&kp O>
+                , <&kp U>
+                , <&kp L>
+                , <&kp D>
                 ;
         };
 
@@ -191,10 +263,38 @@
         // };
 
 // ------------------------- CHARACTER COMBOS --------------------------------
-        combo_YOU {
+        combo_OULD {
             timeout-ms = <50>;
             key-positions = <RTI RTM RTR>;
-            bindings = <&You>;
+            bindings = <&mlc_ould>;
+            layers = <_BASE>;
+        };
+
+        combo_ARE {
+            timeout-ms = <50>;
+            key-positions = <LTI LTM LTR>;
+            bindings = <&mlc_are>;
+            layers = <_BASE>;
+        };
+
+        combo_YOU {
+            timeout-ms = <50>;
+            key-positions = <RMI RMM RMR>;
+            bindings = <&mm_you>;
+            layers = <_BASE>;
+        };
+
+        combo_THE {
+            timeout-ms = <50>;
+            key-positions = <LMI LMM LMR>;
+            bindings = <&mm_the>;
+            layers = <_BASE>;
+        };
+
+        combo_QU {
+            timeout-ms = <50>;
+            key-positions = <RBM RBR>;
+            bindings = <&mlc_qu>;
             layers = <_BASE>;
         };
 
@@ -328,6 +428,22 @@
             //require-prior-idle-ms = <100>;
             bindings = <&mo>, <&kp>;
         };
+
+// ------------------------- MOD-MORPHS --------------------------------
+        mm_you: mm_you {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mlc_you>, <&muc_you>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        mm_the: mm_the {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mlc_the>, <&muc_the>;
+            mods = <(MOD_LSFT)>;
+        };
+
     };
 
     keymap {
@@ -349,14 +465,14 @@
 
                 nav_layer {
 // -------------------------------    ----------------------------------
-// | . , |  7  |  8  |  9  | INS |    | pUP | HOME |  UP  | END  | ESC |
-// |  0  |  4  |  5  |  6  | PSC |    | pDN | LEFT | SPC  | RGHT | RET |
-// |  v. |  1  |  2  |  3  |  v- |    |  v+ | TAB  | DOWN | DEL  | APP |
+// | . , |  4  |  5  |  6  | INS |    | pUP | HOME |  UP  | END  | ESC |
+// |  0  |  1  |  2  |  3  | PSC |    | pDN | LEFT | SPC  | RGHT | RET |
+// |  v. |  7  |  8  |  9  |  v- |    |  v+ | TAB  | DOWN | DEL  | APP |
 //            | _SYM(BSPC) |     |    |     | SHFT |
                         bindings = <
-   &kp KP_DOT    &kp N7        &kp N8       &kp N9        &kp INS         &kp PG_UP    &kp HOME        &kp UP          &kp END          &kp ESC
-   &hml LALT N0  &hml LCTRL N4 &hml LGUI N5 &hsl LSHFT N6 &kp PSCRN       &kp PG_DN    &hsr LSHFT LEFT &hmr LGUI SPACE &hmr LCTRL RIGHT &hmr LALT RET
-   &kp C_MUTE    &kp N1        &kp N2       &kp N3        &kp C_VOL_DN    &kp C_VOL_UP &kp TAB         &kp DOWN        &kp DEL          &kp K_APP
+   &kp KP_DOT    &kp N4        &kp N5       &kp N6        &kp INS         &kp PG_UP    &kp HOME        &kp UP          &kp END          &kp ESC
+   &hml LALT N0  &hml LCTRL N1 &hml LGUI N2 &hsl LSHFT N3 &kp PSCRN       &kp PG_DN    &hsr LSHFT LEFT &hmr LGUI SPACE &hmr LCTRL RIGHT &hmr LALT RET
+   &kp C_MUTE    &kp N7        &kp N8       &kp N9        &kp C_VOL_DN    &kp C_VOL_UP &kp TAB         &kp DOWN        &kp DEL          &kp K_APP
                                            &bst _SYM BSPC &none           &none  &kp LSHFT
                         >;
                 };
@@ -379,12 +495,12 @@
 // -------------------------------    -----------------------------
 // | BT1 | BT2 | BT3 | BT4 | BT5 |    | F1 | F2  | F3  | F4 | F5  |    
 // | ALT | CTL | GUI | SFT | USB |    | F6 | F7  | F8  | F9 | F10 |
-// | CLR |  v- |  v. |  v+ | RGB |    |    | F10 | F12 |    |     |
+// | CLR |  v. |  v- |  v+ | RGB |    |    | F10 | F12 |    |     |
 //                   |     |     |    |    |     |
                         bindings = <
    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4       &kp F1 &kp F2  &kp F3  &kp F4 &kp F5       
    &kp LALT     &kp LCTRL    &kp LGUI     &kp LSHFT    &out OUT_TOG       &kp F6 &kp F7  &kp F8  &kp F9 &kp F10     
-   &bt BT_CLR   &kp C_VOL_DN &kp C_MUTE   &kp C_VOL_UP &rgb_ug RGB_TOG    &none  &kp F11 &kp F12 &none  &none
+   &bt BT_CLR   &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP &rgb_ug RGB_TOG    &none  &kp F11 &kp F12 &none  &none
                                                     &none   &none         &none  &none
                         >;
                 };                
