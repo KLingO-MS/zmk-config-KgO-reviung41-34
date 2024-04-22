@@ -18,8 +18,8 @@
 
 #define RGB_BASE RGB_COLOR_HSB(250,20,3)
 #define RGB_SYM RGB_COLOR_HSB(20,100,4)
-#define RGB_NAV RGB_COLOR_HSB(120,80,3)
-#define RGB_BTF RGB_COLOR_HSB(230,100,4)
+#define RGB_NAV RGB_COLOR_HSB(30,100,4)
+#define RGB_BTF RGB_COLOR_HSB(170,100,4)
 
 / {
 // ------------------------- MACROS --------------------------------
