@@ -451,14 +451,14 @@
 
                 base_layer {
 // -------------------------------    -------------------------------
-// |  B  |  C  |  P  |  L  |  W  |    |  F  |  D  |  O  |  U  |  Y  |
-// |  N  |  S  |  T  |  R  |  J  |    |  G  |  H  |  A  |  E  |  I  |
-// | WCP |  Z  |  V  |  M  |  <  |    |  >  |  K  |  Q  |  X  | mCP |
+// |  Z  |  P  |  D  |  L  |  W  |    |  F  |  V  |  O  |  U  |  Y  |
+// |  T  |  N  |  S  |  R  |  J  |    |  G  |  H  |  A  |  E  |  I  |
+// | WCP |  B  |  C  |  M  |  <  |    |  >  |  K  |  Q  |  X  | mCP |
 //            | _SYM(BSPC) |  =  |    |  +  | _NAV(SPC) |
                         bindings = <
-   &kp B        &kp C        &kp P       &kp L        &kp W       &kp F  &kp D        &kp O       &kp U        &kp Y
-   &hml LALT N  &hml LCTRL S &hml LGUI T &hsl LSHFT R &kp J       &kp G  &hsr LSHFT H &hmr LGUI A &hmr LCTRL E &hmr LALT I
-   &win_cp      &kp Z        &kp V       &kp M        &kp LT      &kp GT &kp K        &kp Q       &kp X        &mac_cp
+   &kp Z        &kp P        &kp D       &kp L        &kp W       &kp F  &kp V        &kp O       &kp U        &kp Y
+   &hml LALT T  &hml LCTRL N &hml LGUI S &hsl LSHFT R &kp J       &kp G  &hsr LSHFT H &hmr LGUI A &hmr LCTRL E &hmr LALT I
+   &win_cp      &kp B        &kp C       &kp M        &kp LT      &kp GT &kp K        &kp Q       &kp X        &mac_cp
                              &bst _SYM BSPC  &bst _NAV EQUAL      &spt _SYM PLUS  &spt _NAV SPACE
                         >;
                 };
@@ -495,7 +495,7 @@
 // -------------------------------    -----------------------------
 // | BT1 | BT2 | BT3 | BT4 | BT5 |    | F1 | F2  | F3  | F4 | F5  |    
 // | ALT | CTL | GUI | SFT | USB |    | F6 | F7  | F8  | F9 | F10 |
-// | CLR |  v. |  v- |  v+ | RGB |    |    | F10 | F12 |    |     |
+// | CLR |  v. |  v- |  v+ | RGB |    |    | F11 | F12 |    |     |
 //                   |     |     |    |    |     |
                         bindings = <
    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4       &kp F1 &kp F2  &kp F3  &kp F4 &kp F5       
