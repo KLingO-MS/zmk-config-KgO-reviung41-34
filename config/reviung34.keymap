@@ -19,7 +19,7 @@
 #define RGB_BASE RGB_COLOR_HSB(250,10,4)
 #define RGB_SYM RGB_COLOR_HSB(20,100,5)
 #define RGB_NAV RGB_COLOR_HSB(20,100,5)
-#define RGB_BTF RGB_COLOR_HSB(170,100,5)
+#define RGB_BTF RGB_COLOR_HSB(190,100,5)
 
 / {
 // ------------------------- MACROS --------------------------------
@@ -452,12 +452,12 @@
                 base_layer {
 // -------------------------------    -------------------------------
 // |  Z  |  P  |  D  |  L  |  W  |    |  F  |  V  |  O  |  U  |  Y  |
-// |  T  |  N  |  S  |  R  |  J  |    |  G  |  H  |  A  |  E  |  I  |
+// |  R  |  N  |  S  |  T  |  J  |    |  G  |  H  |  A  |  E  |  I  |
 // | WCP |  B  |  C  |  M  |  <  |    |  >  |  K  |  Q  |  X  | mCP |
 //            | _SYM(BSPC) |  =  |    |  +  | _NAV(SPC) |
                         bindings = <
    &kp Z        &kp P        &kp D       &kp L        &kp W       &kp F  &kp V        &kp O       &kp U        &kp Y
-   &hml LALT T  &hml LCTRL N &hml LGUI S &hsl LSHFT R &kp J       &kp G  &hsr LSHFT H &hmr LGUI A &hmr LCTRL E &hmr LALT I
+   &hml LALT R  &hml LCTRL N &hml LGUI S &hsl LSHFT T &kp J       &kp G  &hsr LSHFT H &hmr LGUI A &hmr LCTRL E &hmr LALT I
    &win_cp      &kp B        &kp C       &kp M        &kp LT      &kp GT &kp K        &kp Q       &kp X        &mac_cp
                              &bst _SYM BSPC  &bst _NAV EQUAL      &spt _SYM PLUS  &spt _NAV SPACE
                         >;
