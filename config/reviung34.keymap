@@ -451,13 +451,13 @@
 
                 base_layer {
 // -------------------------------    -------------------------------
-// |  P  |  C  |  M  |  L  |  W  |    |  G  |  H  |  O  |  U  |  Y  |
-// |  N  |  S  |  T  |  R  |  J  |    |  F  |  D  |  A  |  E  |  I  |
-// | WCP |  B  |  V  |  Z  |  <  |    |  >  |  K  |  X  |  Q  | mCP |
+// |  P  |  C  |  M  |  L  |  W  |    |  F  |  H  |  O  |  U  |  Y  |
+// |  N  |  S  |  T  |  R  |  J  |    |  G  |  D  |  A  |  E  |  I  |
+// | wCP |  B  |  V  |  Z  |  <  |    |  >  |  K  |  X  |  Q  | mCP |
 //            | _SYM(BSPC) |  =  |    |  +  | _NAV(SPC) |
                         bindings = <
-   &kp P        &kp C        &kp M       &kp L        &kp W       &kp G  &kp H        &kp O       &kp U        &kp Y
-   &hml LALT N  &hml LCTRL S &hml LGUI T &hsl LSHFT R &kp J       &kp F  &hsr LSHFT D &hmr LGUI A &hmr LCTRL E &hmr LALT I
+   &kp P        &kp C        &kp M       &kp L        &kp W       &kp F  &kp H        &kp O       &kp U        &kp Y
+   &hml LALT N  &hml LCTRL S &hml LGUI T &hsl LSHFT R &kp J       &kp G  &hsr LSHFT D &hmr LGUI A &hmr LCTRL E &hmr LALT I
    &win_cp      &kp B        &kp V       &kp Z        &kp LT      &kp GT &kp K        &kp X       &kp Q        &mac_cp
                              &bst _SYM BSPC  &bst _NAV EQUAL      &spt _SYM PLUS  &spt _NAV SPACE
                         >;
@@ -493,14 +493,14 @@
                 
                 btf_layer {
 // -------------------------------    -----------------------------
-// | BT1 | BT2 | BT3 | BT4 | BT5 |    | F1 | F2  | F3  | F4 | F5  |    
-// | ALT | CTL | GUI | SFT | USB |    | F6 | F7  | F8  | F9 | F10 |
-// | CLR |  v. |  v- |  v+ | RGB |    |    | F11 | F12 |    |     |
+// | BT1 | BT2 | BT3 | BT4 | BT5 |    |    | F1 | F2  | F3  | F4  |    
+// | ALT | CTL | GUI | SFT | USB |    |    | F5 | F6  | F7  | F8  |
+// | CLR |  v. |  v- |  v+ | RGB |    |    | F9 | F10 | F11 | F12 |
 //                   |     |     |    |    |     |
                         bindings = <
-   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4       &kp F1 &kp F2  &kp F3  &kp F4 &kp F5       
-   &kp LALT     &kp LCTRL    &kp LGUI     &kp LSHFT    &out OUT_TOG       &kp F6 &kp F7  &kp F8  &kp F9 &kp F10     
-   &bt BT_CLR   &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP &rgb_ug RGB_TOG    &none  &kp F11 &kp F12 &none  &none
+   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4       &none  &kp F1  &kp F2  &kp F3  &kp F4       
+   &kp LALT     &kp LCTRL    &kp LGUI     &kp LSHFT    &out OUT_TOG       &none  &kp F5  &kp F6  &kp F7  &kp F8     
+   &bt BT_CLR   &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP &rgb_ug RGB_TOG    &none  &kp F9  &kp F10 &kp F11 &kp F12
                                                     &none   &none         &none  &none
                         >;
                 };                
