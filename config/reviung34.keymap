@@ -274,7 +274,7 @@
             timeout-ms = <50>;
             require-prior-idle-ms = <120>;
             key-positions = <RMI RMM RMR>;
-            bindings = <&mlc_are>;
+            bindings = <&mlc_ing>;
             layers = <_BASE>;
         };
 
