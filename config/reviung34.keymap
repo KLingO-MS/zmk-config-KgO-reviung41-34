@@ -16,10 +16,10 @@
 #define _SYM     2
 #define _BTF     3
 
-#define RGB_BASE RGB_COLOR_HSB(250,10,4)
+#define RGB_BASE RGB_COLOR_HSB(0,100,5)
 #define RGB_SYM RGB_COLOR_HSB(20,100,5)
-#define RGB_NAV RGB_COLOR_HSB(20,100,5)
-#define RGB_BTF RGB_COLOR_HSB(190,100,5)
+#define RGB_NAV RGB_COLOR_HSB(330,100,7)
+#define RGB_BTF RGB_COLOR_HSB(240,100,7)
 
 / {
 // ------------------------- MACROS --------------------------------
@@ -103,7 +103,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&rgb_ug RGB_COLOR_HSB(0,100,50)>
+                = <&rgb_ug RGB_COLOR_HSB(0,100,100)>
                 , <&rgb_ug RGB_ON>
                 , <&bootloader>
                 ;
@@ -157,17 +157,17 @@
                 ;
         };
 
-        // mlc_are: macro_lc_are {
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     wait-ms = <0>;
-        //     tap-ms = <5>;
-        //     bindings
-        //         = <&kp A>
-        //         , <&kp R>
-        //         , <&kp E>
-        //         ;
-        // };
+        mlc_ing: macro_lc_ing {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <5>;
+            bindings
+                = <&kp I>
+                , <&kp N>
+                , <&kp G>
+                ;
+        };
 
         mlc_qu: macro_lc_qu {
             compatible = "zmk,behavior-macro";
@@ -213,28 +213,28 @@
 
         combo_NAVR {
             timeout-ms = <50>;
-            key-positions = <RMP RHO>;
+            key-positions = <RMP RMC>;
             bindings = <&to_NAV>;
             layers = <_BASE>;
         };
 
         combo_BASER {
             timeout-ms = <50>;
-            key-positions = <RMP RHO>;
+            key-positions = <RMP RMC>;
             bindings = <&to_BASE>;
             layers = <_NAV>;
         };
 
         combo_NAVL {
             timeout-ms = <50>;
-            key-positions = <LMP LHO>;
+            key-positions = <LMP LMC>;
             bindings = <&to_NAV>;
             layers = <_BASE>;
         };
 
         combo_BASEL {
             timeout-ms = <50>;
-            key-positions = <LMP LHO>;
+            key-positions = <LMP LMC>;
             bindings = <&to_BASE>;
             layers = <_NAV>;
         };
@@ -270,22 +270,25 @@
         //     layers = <_BASE>;
         // };
 
-        // combo_ARE {
-        //     timeout-ms = <50>;
-        //     key-positions = <LTI LTM LTR>;
-        //     bindings = <&mlc_are>;
-        //     layers = <_BASE>;
-        // };
+        combo_ING {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <120>;
+            key-positions = <RMI RMM RMR>;
+            bindings = <&mlc_are>;
+            layers = <_BASE>;
+        };
 
         combo_YOU {
             timeout-ms = <50>;
-            key-positions = <RMI RMM RMR>;
+            require-prior-idle-ms = <120>;
+            key-positions = <RTI RTM RTR>;
             bindings = <&mm_you>;
             layers = <_BASE>;
         };
 
         combo_THE {
             timeout-ms = <50>;
+            require-prior-idle-ms = <120>;
             key-positions = <LMI LMM LMR>;
             bindings = <&mm_the>;
             layers = <_BASE>;
@@ -293,6 +296,7 @@
 
         combo_QU {
             timeout-ms = <50>;
+            require-prior-idle-ms = <120>;
             key-positions = <RBM RBR>;
             bindings = <&mlc_qu>;
             layers = <_BASE>;
@@ -301,6 +305,7 @@
 // ------------------------- SYMBOL COMBOS --------------------------------
         combo_LPAR {
             timeout-ms = <45>;
+            require-prior-idle-ms = <120>;
             key-positions = <LMM LMI>;
             bindings = <&kp LPAR>;
             layers = <_BASE _SYM>;
@@ -308,6 +313,7 @@
 
         combo_RPAR {
             timeout-ms = <45>;
+            require-prior-idle-ms = <120>;
             key-positions = <RMI RMM>;
             bindings = <&kp RPAR>;
             layers = <_BASE _SYM>;
@@ -315,6 +321,7 @@
 
         combo_LBRC {
             timeout-ms = <45>;
+            require-prior-idle-ms = <120>;
             key-positions = <LTM LTI>;
             bindings = <&kp LBRC>;
             layers = <_BASE _SYM>;
@@ -322,6 +329,7 @@
 
         combo_RBRC {
             timeout-ms = <45>;
+            require-prior-idle-ms = <120>;
             key-positions = <RTI RTM>;
             bindings = <&kp RBRC>;
             layers = <_BASE _SYM>;
@@ -329,6 +337,7 @@
 
         combo_LBKT {
             timeout-ms = <45>;
+            require-prior-idle-ms = <120>;
             key-positions = <LBM LBI>;
             bindings = <&kp LBKT>;
             layers = <_BASE _SYM>;
@@ -336,6 +345,7 @@
 
         combo_RBKT {
             timeout-ms = <45>;
+            require-prior-idle-ms = <120>;
             key-positions = <RBI RBM>;
             bindings = <&kp RBKT>;
             layers = <_BASE _SYM>;
