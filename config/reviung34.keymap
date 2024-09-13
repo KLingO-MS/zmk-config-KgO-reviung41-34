@@ -18,8 +18,8 @@
 
 #define RGB_BASE RGB_COLOR_HSB(0,100,5)
 #define RGB_SYM RGB_COLOR_HSB(20,100,5)
-#define RGB_NAV RGB_COLOR_HSB(330,100,7)
-#define RGB_BTF RGB_COLOR_HSB(240,100,7)
+#define RGB_NAV RGB_COLOR_HSB(350,100,7)
+#define RGB_BTF RGB_COLOR_HSB(250,100,7)
 
 / {
 // ------------------------- MACROS --------------------------------
@@ -461,14 +461,14 @@
 
                 base_layer {
 // -------------------------------    -------------------------------
-// |  P  |  C  |  M  |  L  |  W  |    |  F  |  D  |  O  |  U  |  Y  |
+// |  P  |  Z  |  M  |  L  |  W  |    |  F  |  D  |  O  |  U  |  Y  |
 // |  N  |  S  |  T  |  R  |  J  |    |  B  |  H  |  A  |  E  |  I  |
-// | wCP |  G  |  V  |  Z  |  <  |    |  >  |  K  |  X  |  Q  | mCP |
+// | wCP |  G  |  V  |  C  |  <  |    |  >  |  K  |  X  |  Q  | mCP |
 //            | _SYM(BSPC) |  =  |    |  +  | _NAV(SPC) |
                         bindings = <
-   &kp P        &kp C        &kp M       &kp L        &kp W       &kp F  &kp D        &kp O       &kp U        &kp Y
+   &kp P        &kp Z        &kp M       &kp L        &kp W       &kp F  &kp D        &kp O       &kp U        &kp Y
    &hml LALT N  &hml LCTRL S &hml LGUI T &hsl LSHFT R &kp J       &kp B  &hsr LSHFT H &hmr LGUI A &hmr LCTRL E &hmr LALT I
-   &win_cp      &kp G        &kp V       &kp Z        &kp LT      &kp GT &kp K        &kp X       &kp Q        &mac_cp
+   &win_cp      &kp G        &kp V       &kp C        &kp LT      &kp GT &kp K        &kp X       &kp Q        &mac_cp
                              &bst _SYM BSPC  &bst _NAV EQUAL      &spt _SYM PLUS  &spt _NAV SPACE
                         >;
                 };
