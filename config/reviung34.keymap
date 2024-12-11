@@ -22,11 +22,10 @@
 #define RGB_NAV RGB_COLOR_HSB(10,100,8)
 #define RGB_BTF RGB_COLOR_HSB(250,100,8)
 
-// /delete-node/        zmk,kscan = &kscan0;
-// /delete-node/        zmk,matrix_transform = &dual_1u_transform;
-
 / {
     chosen {
+        /delete-property/  zmk,kscan = &kscan0;
+        /delete-property/  zmk,matrix_transform = &dual_1u_transform;
         zmk,physical-layout = &dual_1u_layout;
     };
 
