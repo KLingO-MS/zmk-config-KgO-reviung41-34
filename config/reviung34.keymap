@@ -24,8 +24,8 @@
 
 / {
     chosen {
-        /delete-property/  zmk,kscan = &kscan0;
-        /delete-property/  zmk,matrix_transform = &dual_1u_transform;
+        /delete-property/  zmk,kscan;
+        /delete-property/  zmk,matrix_transform;
         zmk,physical-layout = &dual_1u_layout;
     };
 
