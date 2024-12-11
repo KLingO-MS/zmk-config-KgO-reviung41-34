@@ -23,12 +23,6 @@
 #define RGB_BTF RGB_COLOR_HSB(250,100,8)
 
 / {
-    chosen {
-        /delete-property/  zmk,kscan;
-        /delete-property/  zmk,matrix_transform;
-        zmk,physical-layout = &dual_1u_layout;
-    };
-
     dual_1u_layout: dual_1u_layout {
         compatible = "zmk,physical-layout";
         display-name = "Dual 1u Layout";
@@ -596,5 +590,13 @@
                 extra2 {
                         status = "reserved";
                 };         
+    };
+
+    chosen {
+        
+        zmk,physical-layout = &dual_1u_layout;
+
+        /delete-property/  zmk,kscan;
+        /delete-property/  zmk,matrix_transform;
     };
 };
