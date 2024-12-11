@@ -21,7 +21,59 @@
 #define RGB_NAV RGB_COLOR_HSB(10,100,8)
 #define RGB_BTF RGB_COLOR_HSB(250,100,8)
 
+// /delete-node/        zmk,kscan = &kscan0;
+// /delete-node/        zmk,matrix_transform = &dual_1u_transform;
+
 / {
+    chosen {
+        zmk,physical-layout = &dual_1u_layout;
+    };
+
+    dual_1u_layout: dual_1u_layout {
+        compatible = "zmk,physical-layout";
+        display-name = "Dual 1u Layout";
+        transform = <&dual_1u_transform>;
+        kscan = <&kscan0>;
+
+                keys  //             w   h    x    y     rot    rx    ry
+            = <&key_physical_attrs 100 100    0   50     500   250   150>
+            , <&key_physical_attrs 100 100  100   25     500   250   150>
+            , <&key_physical_attrs 100 100  200    0     500   250   150>
+            , <&key_physical_attrs 100 100  300   25     500   250   150>
+            , <&key_physical_attrs 100 100  400   50     500   250   150>
+            , <&key_physical_attrs 100 100  600   50   (-500)  850   150>
+            , <&key_physical_attrs 100 100  700   25   (-500)  850   150>
+            , <&key_physical_attrs 100 100  800    0   (-500)  850   150>
+            , <&key_physical_attrs 100 100  900   25   (-500)  850   150>
+            , <&key_physical_attrs 100 100 1000   50   (-500)  850   150>
+            , <&key_physical_attrs 100 100    0  150     500   250   150>
+            , <&key_physical_attrs 100 100  100  125     500   250   150>
+            , <&key_physical_attrs 100 100  200  100     500   250   150>
+            , <&key_physical_attrs 100 100  300  125     500   250   150>
+            , <&key_physical_attrs 100 100  400  150     500   250   150>
+            , <&key_physical_attrs 100 100  600  150   (-500)  850   150>
+            , <&key_physical_attrs 100 100  700  125   (-500)  850   150>
+            , <&key_physical_attrs 100 100  800  100   (-500)  850   150>
+            , <&key_physical_attrs 100 100  900  125   (-500)  850   150>
+            , <&key_physical_attrs 100 100 1000  150   (-500)  850   150>
+            , <&key_physical_attrs 100 100    0  250     500   250   150>
+            , <&key_physical_attrs 100 100  100  225     500   250   150>
+            , <&key_physical_attrs 100 100  200  200     500   250   150>
+            , <&key_physical_attrs 100 100  300  225     500   250   150>
+            , <&key_physical_attrs 100 100  400  250     500   250   150>
+            , <&key_physical_attrs 100 100  600  250   (-500)  850   150>
+            , <&key_physical_attrs 100 100  700  225   (-500)  850   150>
+            , <&key_physical_attrs 100 100  800  200   (-500)  850   150>
+            , <&key_physical_attrs 100 100  900  225   (-500)  850   150>
+            , <&key_physical_attrs 100 100 1000  250   (-500)  850   150>
+            , <&key_physical_attrs 100 100  350  350     500   450   350>
+            , <&key_physical_attrs 100 100  450  350       0     0     0>
+            , <&key_physical_attrs 100 100  550  350       0     0     0>
+            , <&key_physical_attrs 100 100  650  350   (-500)  650   350>
+            ;
+
+    };
+
 // ------------------------- MACROS --------------------------------
     macros {
         to_BASE: to_BASE {
@@ -109,65 +161,65 @@
                 ;
         };
 
-        muc_you: macro_uc_you {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <5>;
-            bindings
-                = <&kp LS(Y)>
-                , <&kp O>
-                , <&kp U>
-                ;
-        };
+        // muc_you: macro_uc_you {
+        //     compatible = "zmk,behavior-macro";
+        //     #binding-cells = <0>;
+        //     wait-ms = <0>;
+        //     tap-ms = <5>;
+        //     bindings
+        //         = <&kp LS(Y)>
+        //         , <&kp O>
+        //         , <&kp U>
+        //         ;
+        // };
 
-        mlc_you: macro_lc_you {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <5>;
-            bindings
-                = <&kp Y>
-                , <&kp O>
-                , <&kp U>
-                ;
-        };
+        // mlc_you: macro_lc_you {
+        //     compatible = "zmk,behavior-macro";
+        //     #binding-cells = <0>;
+        //     wait-ms = <0>;
+        //     tap-ms = <5>;
+        //     bindings
+        //         = <&kp Y>
+        //         , <&kp O>
+        //         , <&kp U>
+        //         ;
+        // };
 
-        muc_the: macro_uc_the {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <5>;
-            bindings
-                = <&kp LS(T)>
-                , <&kp H>
-                , <&kp E>
-                ;
-        };
+        // muc_the: macro_uc_the {
+        //     compatible = "zmk,behavior-macro";
+        //     #binding-cells = <0>;
+        //     wait-ms = <0>;
+        //     tap-ms = <5>;
+        //     bindings
+        //         = <&kp LS(T)>
+        //         , <&kp H>
+        //         , <&kp E>
+        //         ;
+        // };
 
-        mlc_the: macro_lc_the {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <5>;
-            bindings
-                = <&kp T>
-                , <&kp H>
-                , <&kp E>
-                ;
-        };
+        // mlc_the: macro_lc_the {
+        //     compatible = "zmk,behavior-macro";
+        //     #binding-cells = <0>;
+        //     wait-ms = <0>;
+        //     tap-ms = <5>;
+        //     bindings
+        //         = <&kp T>
+        //         , <&kp H>
+        //         , <&kp E>
+        //         ;
+        // };
 
-        mlc_ing: macro_lc_ing {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <5>;
-            bindings
-                = <&kp I>
-                , <&kp N>
-                , <&kp G>
-                ;
-        };
+        // mlc_ing: macro_lc_ing {
+        //     compatible = "zmk,behavior-macro";
+        //     #binding-cells = <0>;
+        //     wait-ms = <0>;
+        //     tap-ms = <5>;
+        //     bindings
+        //         = <&kp I>
+        //         , <&kp N>
+        //         , <&kp G>
+        //         ;
+        // };
 
         mlc_qu: macro_lc_qu {
             compatible = "zmk,behavior-macro";
@@ -200,6 +252,7 @@
 // ------------------------- LAYER COMBOS --------------------------------
         combo_BOOT {
             timeout-ms = <50>;
+            require-prior-idle-ms = <200>;
             key-positions = <LMC RMC>;
             bindings = <&to_BOOT>;
             layers = <_BTF>;
@@ -207,34 +260,39 @@
 
         combo_BTF {
             timeout-ms = <50>;
+            require-prior-idle-ms = <200>;
             key-positions = <LHO RHO>;
             bindings = <&mo_BTF>;
         };
 
         combo_NAVR {
             timeout-ms = <50>;
-            key-positions = <RMP RMC>;
+            require-prior-idle-ms = <200>;
+            key-positions = <RMI RMM RMR>;
             bindings = <&to_NAV>;
             layers = <_BASE>;
         };
 
         combo_BASER {
             timeout-ms = <50>;
-            key-positions = <RMP RMC>;
+            require-prior-idle-ms = <200>;
+            key-positions = <RMI RMM RMR>;
             bindings = <&to_BASE>;
             layers = <_NAV>;
         };
 
         combo_NAVL {
             timeout-ms = <50>;
-            key-positions = <LMP LMC>;
+            require-prior-idle-ms = <200>;
+            key-positions = <LMI LMM LMR>;
             bindings = <&to_NAV>;
             layers = <_BASE>;
         };
 
         combo_BASEL {
             timeout-ms = <50>;
-            key-positions = <LMP LMC>;
+            require-prior-idle-ms = <200>;
+            key-positions = <LMI LMM LMR>;
             bindings = <&to_BASE>;
             layers = <_NAV>;
         };
@@ -270,33 +328,33 @@
         //     layers = <_BASE>;
         // };
 
-        combo_ING {
-            timeout-ms = <50>;
-            require-prior-idle-ms = <120>;
-            key-positions = <RMI RMM RMR>;
-            bindings = <&mlc_ing>;
-            layers = <_BASE>;
-        };
+        // combo_ING {
+        //     timeout-ms = <50>;
+        //     require-prior-idle-ms = <120>;
+        //     key-positions = <RMI RMM RMR>;
+        //     bindings = <&mlc_ing>;
+        //     layers = <_BASE>;
+        // };
 
-        combo_YOU {
-            timeout-ms = <50>;
-            require-prior-idle-ms = <120>;
-            key-positions = <RTI RTM RTR>;
-            bindings = <&mm_you>;
-            layers = <_BASE>;
-        };
+        // combo_YOU {
+        //     timeout-ms = <50>;
+        //     require-prior-idle-ms = <120>;
+        //     key-positions = <RTI RTM RTR>;
+        //     bindings = <&mm_you>;
+        //     layers = <_BASE>;
+        // };
 
-        combo_THE {
-            timeout-ms = <50>;
-            require-prior-idle-ms = <120>;
-            key-positions = <LMI LMM LMR>;
-            bindings = <&mm_the>;
-            layers = <_BASE>;
-        };
+        // combo_THE {
+        //     timeout-ms = <50>;
+        //     require-prior-idle-ms = <120>;
+        //     key-positions = <LMI LMM LMR>;
+        //     bindings = <&mm_the>;
+        //     layers = <_BASE>;
+        // };
 
         combo_QU {
-            timeout-ms = <50>;
-            require-prior-idle-ms = <120>;
+            timeout-ms = <150>;
+            // require-prior-idle-ms = <120>;
             key-positions = <RBM RBR>;
             bindings = <&mlc_qu>;
             layers = <_BASE>;
@@ -348,6 +406,22 @@
             require-prior-idle-ms = <120>;
             key-positions = <RBI RBM>;
             bindings = <&kp RBKT>;
+            layers = <_BASE _SYM>;
+        };
+
+        combo_GT {
+            timeout-ms = <45>;
+            require-prior-idle-ms = <200>;
+            key-positions = <RMM RMR>;
+            bindings = <&kp GT>;
+            layers = <_BASE _SYM>;
+        };
+
+        combo_LT {
+            timeout-ms = <45>;
+            require-prior-idle-ms = <200>;
+            key-positions = <LMM LMR>;
+            bindings = <&kp LT>;
             layers = <_BASE _SYM>;
         };
     };
@@ -440,19 +514,19 @@
         };
 
 // ------------------------- MOD-MORPHS --------------------------------
-        mm_you: mm_you {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&mlc_you>, <&muc_you>;
-            mods = <(MOD_LSFT)>;
-        };
+        // mm_you: mm_you {
+        //     compatible = "zmk,behavior-mod-morph";
+        //     #binding-cells = <0>;
+        //     bindings = <&mlc_you>, <&muc_you>;
+        //     mods = <(MOD_LSFT)>;
+        // };
 
-        mm_the: mm_the {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&mlc_the>, <&muc_the>;
-            mods = <(MOD_LSFT)>;
-        };
+        // mm_the: mm_the {
+        //     compatible = "zmk,behavior-mod-morph";
+        //     #binding-cells = <0>;
+        //     bindings = <&mlc_the>, <&muc_the>;
+        //     mods = <(MOD_LSFT)>;
+        // };
 
     };
 
@@ -513,6 +587,14 @@
    &bt BT_CLR   &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP &rgb_ug RGB_TOG    &none  &kp F9  &kp F10 &kp F11 &kp F12
                                                     &none   &none         &none  &none
                         >;
-                };                
+                };       
+
+                extra1 {
+                        status = "reserved";
+                };
+
+                extra2 {
+                        status = "reserved";
+                };         
     };
 };
