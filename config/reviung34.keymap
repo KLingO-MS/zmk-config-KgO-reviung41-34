@@ -597,6 +597,6 @@
         zmk,physical-layout = &dual_1u_layout;
 
         /delete-property/  zmk,kscan;
-        /delete-property/  zmk,matrix_transform;
+        /delete-property/  zmk,matrix-transform;
     };
 };
