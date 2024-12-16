@@ -25,7 +25,7 @@
 / {
     dual_1u_layout: dual_1u_layout {
         compatible = "zmk,physical-layout";
-        display-name = "Dual 1u Layout";
+        display-name = "Dual 1u space";
         transform = <&dual_1u_transform>;
         kscan = <&kscan0>;
 
@@ -155,29 +155,16 @@
                 ;
         };
 
-        // muc_you: macro_uc_you {
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     wait-ms = <0>;
-        //     tap-ms = <5>;
-        //     bindings
-        //         = <&kp LS(Y)>
-        //         , <&kp O>
-        //         , <&kp U>
-        //         ;
-        // };
-
-        // mlc_you: macro_lc_you {
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     wait-ms = <0>;
-        //     tap-ms = <5>;
-        //     bindings
-        //         = <&kp Y>
-        //         , <&kp O>
-        //         , <&kp U>
-        //         ;
-        // };
+        mlc_ou: macro_lc_ou {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <5>;
+            bindings
+                = <&kp O>
+                , <&kp U>
+                ;
+        };
 
         // muc_the: macro_uc_the {
         //     compatible = "zmk,behavior-macro";
@@ -330,13 +317,13 @@
         //     layers = <_BASE>;
         // };
 
-        // combo_YOU {
-        //     timeout-ms = <50>;
-        //     require-prior-idle-ms = <120>;
-        //     key-positions = <RTI RTM RTR>;
-        //     bindings = <&mm_you>;
-        //     layers = <_BASE>;
-        // };
+        combo_OU {
+            timeout-ms = <120>;
+            //require-prior-idle-ms = <120>;
+            key-positions = <RTM RTR>;
+            bindings = <&mlc_ou>;
+            layers = <_BASE>;
+        };
 
         // combo_THE {
         //     timeout-ms = <50>;
