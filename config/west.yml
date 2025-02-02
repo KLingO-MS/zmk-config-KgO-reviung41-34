@@ -11,9 +11,10 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-#      revision: fix-battery-reporting
-#      revision: custom-wq-pr
       revision: main
       import: app/west.yml
+    - name: zmk-adaptive-key
+      remote: urob
+      revision: v0.1 # version to use for this module
   self:
     path: config
